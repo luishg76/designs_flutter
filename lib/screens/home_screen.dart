@@ -9,7 +9,9 @@ class HomeScreen extends StatelessWidget {
      return Scaffold(
         body: Column(
           children: [
-            Container(child: Image(image:)),
+            Container(
+                 child: Image.asset('assets/design1.jpg'),
+            ),         
             Center(
              child: Text('Hola Mundo'),
        ),
