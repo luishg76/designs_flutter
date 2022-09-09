@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:designs_flutter/screens/home_screen.dart';
+import 'package:designs_flutter/screens/basic_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,9 +26,9 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      initialRoute: 'home_screen',
+      initialRoute: 'basic_screen',
       routes: {
-        'home_screen':(_)=>HomeScreen(),
+        'basic_screen':(_)=>BasicScreen(),
       },
     );
   }
