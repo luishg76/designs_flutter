@@ -16,9 +16,9 @@ class BasicScreen extends StatelessWidget {
               margin: EdgeInsets.all(15.0),
               child: Column(
                 children: [
-                  _titleSection(title:'Este es el Título',autor:'Aqui va el Autor'),
+                  _titleSection(),
                   _buttonSection(),
-                  _descriptionSection(description: 'Exercitation elit voluptate irure in dolore voluptate aliqua aliquip sunt minim ullamco aliqua minim. Aliquip aute ea nulla fugiat tempor veniam occaecat sunt ex. Magna quis cillum adipisicing cupidatat elit deserunt nulla ea ut sunt laborum eiusmod. Est quis laborum qui culpa non consequat non est dolore deserunt qui occaecat esse cillum. Esse proident excepteur excepteur Lorem cupidatat sunt. Cillum ad elit fugiat eiusmod laborum elit officia ea aute consequat cupidatat laborum.')
+                  _descriptionSection(description:'Quis irure velit et velit elit duis exercitation cillum consectetur consequat ea sint tempor eu. Est dolor id aute irure amet quis. Reprehenderit ut quis labore dolore. Mollit incididunt aute dolore pariatur deserunt et reprehenderit velit labore cupidatat fugiat amet tempor minim. Do ut amet amet veniam incididunt in. Ea excepteur pariatur incididunt dolore.'),
                   ]),
                   
             ),
@@ -26,6 +26,18 @@ class BasicScreen extends StatelessWidget {
             
           ],
         ),
+    );
+  }
+}
+
+class _descriptionSection extends StatelessWidget {
+  String description;
+
+  _descriptionSection({required this.description});
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        child: Text('${description}', textAlign: TextAlign.justify,),
     );
   }
 }
@@ -73,24 +85,8 @@ class _button extends StatelessWidget {
   }
 }
 
-class _descriptionSection extends StatelessWidget {
-  String description;
-
-  _descriptionSection({ required this.description});
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-                    margin: EdgeInsets.all(15.0),
-                    child: Text('Aqui va la descripción, ${description}', textAlign: TextAlign.justify,),
-                  );
-  }
-}
-
 class _titleSection extends StatelessWidget {
-  String title;
-  String autor;
-
-  _titleSection({ required this.title, required this.autor});
+  const _titleSection({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -106,8 +102,8 @@ class _titleSection extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(title, style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold)),
-                    Text(autor, style: TextStyle(fontSize: 16.0, color: Colors.black38),)
+                    Text('Este es el Título de la Imagen', style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold)),
+                    Text('Este es el Autor de la Imagen', style: TextStyle(fontSize: 16.0, color: Colors.black38),)
                   ],
                 ),
               ),
