@@ -1,3 +1,4 @@
+import 'package:designs_flutter/screens/scroll_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:designs_flutter/screens/basic_screen.dart';
 
@@ -26,9 +27,10 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      initialRoute: 'basic_screen',
+      initialRoute: 'scroll_screen',
       routes: {
         'basic_screen':(_)=>BasicScreen(),
+        'scroll_screen':(_)=>ScrollScreen(),
       },
     );
   }

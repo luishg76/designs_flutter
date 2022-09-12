@@ -16,8 +16,9 @@ class BasicScreen extends StatelessWidget {
               margin: EdgeInsets.all(15.0),
               child: Column(
                 children: [
-                  _titleSection(),
+                  _titleSection(title:'Este es el Título',autor:'Aqui va el Autor'),
                   _buttonSection(),
+                  _descriptionSection(description: 'Exercitation elit voluptate irure in dolore voluptate aliqua aliquip sunt minim ullamco aliqua minim. Aliquip aute ea nulla fugiat tempor veniam occaecat sunt ex. Magna quis cillum adipisicing cupidatat elit deserunt nulla ea ut sunt laborum eiusmod. Est quis laborum qui culpa non consequat non est dolore deserunt qui occaecat esse cillum. Esse proident excepteur excepteur Lorem cupidatat sunt. Cillum ad elit fugiat eiusmod laborum elit officia ea aute consequat cupidatat laborum.')
                   ]),
                   
             ),
@@ -72,14 +73,29 @@ class _button extends StatelessWidget {
   }
 }
 
+class _descriptionSection extends StatelessWidget {
+  String description;
+
+  _descriptionSection({ required this.description});
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+                    margin: EdgeInsets.all(15.0),
+                    child: Text('Aqui va la descripción, ${description}', textAlign: TextAlign.justify,),
+                  );
+  }
+}
+
 class _titleSection extends StatelessWidget {
-  const _titleSection({Key? key}) : super(key: key);
+  String title;
+  String autor;
+
+  _titleSection({ required this.title, required this.autor});
 
   @override
   Widget build(BuildContext context) {
     final size_width=MediaQuery.of(context).size.width;
     return Row(
-             //mainAxisAlignment: MainAxisAlignment.spaceBetween,             
              children:[
               Container(
                 margin: EdgeInsets.only(left: 10.0),
@@ -90,8 +106,8 @@ class _titleSection extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Este es el Título de la Imagen', style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold)),
-                    Text('Este es el Autor de la Imagen', style: TextStyle(fontSize: 16.0, color: Colors.black38),)
+                    Text(title, style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold)),
+                    Text(autor, style: TextStyle(fontSize: 16.0, color: Colors.black38),)
                   ],
                 ),
               ),
