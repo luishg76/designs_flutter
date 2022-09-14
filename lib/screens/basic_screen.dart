@@ -85,8 +85,7 @@ class _button extends StatelessWidget {
   }
 }
 
-class _titleSection extends StatelessWidget {
-  const _titleSection({Key? key}) : super(key: key);
+class _titleSection extends StatelessWidget {  
 
   @override
   Widget build(BuildContext context) {

@@ -34,10 +34,11 @@ class _Page2 extends StatelessWidget {
         ),
         child: Center(
           child: TextButton(
-            style: TextButton.styleFrom(
-              backgroundColor: Color.fromARGB(255, 212, 56, 17),
+              style: TextButton.styleFrom(
+              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              backgroundColor: Colors.redAccent,
               shape: StadiumBorder(),
-              shadowColor: Colors.black,
+              shadowColor: Colors.black87,
             ),            
             child:Text('Bienvenido', style:TextStyle(color: Colors.white, fontSize: 30.0),),
             onPressed:(){},
