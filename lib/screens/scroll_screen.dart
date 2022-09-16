@@ -41,7 +41,9 @@ class _Page2 extends StatelessWidget {
               shadowColor: Colors.black87,
             ),            
             child:Text('Bienvenido', style:TextStyle(color: Colors.white, fontSize: 30.0),),
-            onPressed:(){},
+            onPressed:(){
+              Navigator.pop(context);
+            },
              ),
         ),
     );
