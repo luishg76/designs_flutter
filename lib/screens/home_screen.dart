@@ -86,12 +86,13 @@ class _SingleCardWidget extends StatelessWidget {
               margin: EdgeInsets.only(bottom: 20),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(60), 
-                gradient: RadialGradient(colors:[Color.fromRGBO(color.red+10, color.green+10, color.blue+10, 1), color ])
+                color:color,               
+                
                 ),
-              child:Icon(icono,color:Colors.white60, size: 35,)
+              child:Icon(icono,color:Colors.white, size: 35,)
               ),
             //SizedBox(height: 25),
-            Text(title, style: TextStyle(color: color, ),)
+            Text(title, style: TextStyle(color: color, fontSize: 14 ),)
           ],
 
         ),
