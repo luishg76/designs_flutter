@@ -1,4 +1,5 @@
 
+import 'package:designs_flutter/widgets/custom_botton_navigation.dart';
 import 'package:flutter/material.dart';
 
 class BasicScreen extends StatelessWidget {
@@ -26,6 +27,7 @@ class BasicScreen extends StatelessWidget {
             
           ],
         ),
+        bottomNavigationBar: CustomBottonNavigation(),
     );
   }
 }

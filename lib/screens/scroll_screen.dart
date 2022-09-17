@@ -2,6 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
+import '../widgets/custom_botton_navigation.dart';
+
 
 class ScrollScreen extends StatelessWidget {
   
@@ -15,6 +17,7 @@ class ScrollScreen extends StatelessWidget {
             _Page2()
           ]
         ),
+        bottomNavigationBar: CustomBottonNavigation(),
     );
   }
 }
@@ -35,8 +38,8 @@ class _Page2 extends StatelessWidget {
         child: Center(
           child: TextButton(
               style: TextButton.styleFrom(
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
-              backgroundColor: Colors.redAccent,
+              padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
+              backgroundColor: Color.fromARGB(255, 122, 7, 7),
               shape: StadiumBorder(),
               shadowColor: Colors.black87,
             ),            

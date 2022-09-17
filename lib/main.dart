@@ -1,10 +1,12 @@
+import 'package:designs_flutter/provider/menu_provider.dart';
 import 'package:designs_flutter/screens/home_screen.dart';
 import 'package:designs_flutter/screens/scroll_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:designs_flutter/screens/basic_screen.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(AppStateWidget());
 }
 
 class MyApp extends StatelessWidget {
@@ -16,16 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Designs Flutter',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
+      theme: ThemeData(        
         primarySwatch: Colors.blue,
       ),
       initialRoute: 'home_screen',
@@ -35,6 +28,20 @@ class MyApp extends StatelessWidget {
         'home_screen':(_)=>HomeScreen(),
       },
     );
+  }
+}
+
+
+
+
+class AppStateWidget extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+     return MultiProvider(
+      providers: [ChangeNotifierProvider(create: (_)=>MenuProvider())],
+      child: MyApp(),
+      );
   }
 }
 
